@@ -1,0 +1,36 @@
+/*
+The Intel-4001 functions as a 256x8 word ROM and an I/O device. 
+
+A single MSC-4 Computer can consist of up to 16 Intel-4001 chips, without having to add any exterior logic.
+
+For executing a single 8 bit instruction, the MSC4 has 8 clock cycles known as: A1, A2, A3, M1, M2, X1, X2, X3.
+Typically the Intel-4001 is only active for the A1, A2, A3, M1 and M2 cycles. 
+
+*/
+
+module I4001(D0,D1,D2,D3,CLK0,CLK1,VSS,SYNC,O0,O1,O2,O3,VDD,CM,P0,RESET);
+	
+	inout D0;
+	inout D1;
+	inout D2;
+	inout D3;
+	
+	input CLK0;
+	input CLK1;
+	input VSS;
+	input SYNC;
+	input VDD;
+	input CM;
+	input P0;
+	input RESET;
+	
+	output O0;
+	output O1;
+	output O2;
+	output O3;
+	
+	reg [7:0] ROM[0:255];
+	reg [255:0] ADDRESS;
+	
+	
+endmodule
